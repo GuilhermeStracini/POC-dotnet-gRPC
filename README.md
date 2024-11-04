@@ -2,6 +2,11 @@
 
 A template repository for .NET PoC (Proof of Concept)
 
+## Pixeebot Activity Dashboard
+
+The Pixeebot Activity Dashboard provides a comprehensive summary of repository activities, highlights available improvement opportunities, and offers actionable recommendations to enhance the project's quality and maintainability.
+
+
 ---
 
 - Create a new repository using this one as a template (click the green button at the top right of this page).
