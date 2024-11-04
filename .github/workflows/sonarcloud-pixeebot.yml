@@ -1,3 +1,15 @@
+name: SonarCloud and Pixeebot Integration
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  sonarcloud:
 name: Fix SonarCloud Issues with Pixeebot
 on:
   check_run:
