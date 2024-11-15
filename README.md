@@ -1,35 +1,103 @@
-# Project Title
+# PoC gRPC using .NET
 
-One Paragraph of the project description goes here.
+This repository demonstrates a Proof of Concept (PoC) implementation of gRPC using .NET, focusing on server-sent events. It includes both the server and client implementations, illustrating how to build and consume gRPC services for real-time event streaming.
 
-## Getting Started
+---
 
-These instructions will get you a copy of the project up and running on your local machine for development and testing. See deployment for notes on deploying the project on a live system.
+## Features
 
-## Useful links
+- **gRPC Server:** Handles client subscriptions and streams real-time events.
+- **gRPC Client:** Connects to the server and processes received events.
+- **Server-Sent Events:** Implements a streaming mechanism using gRPC for efficient real-time data delivery.
 
-- A list of links
-- Documentation
-- Or just examples
+---
 
-### Prerequisites
+## Architecture
 
-What things do you need to install the software, and how to install them
+### Sequence Diagram: gRPC Server-Sent Events
 
+```mermaid
+sequenceDiagram
+    actor Client
+    participant GrpcSSEClient as gRPC Client
+    participant GrpcSSE as gRPC Server
+    participant EventService
+
+    Client->>GrpcSSEClient: Start Client
+    GrpcSSEClient->>GrpcSSE: Connect to Server
+    GrpcSSE->>EventService: Handle Subscription
+    loop Stream Events
+        EventService->>GrpcSSEClient: Send Event Data
+    end
+    GrpcSSEClient->>Client: Display Event Data
 ```
-Give examples
+
+### Class Diagram: gRPC Server and Client
+
+```mermaid
+classDiagram
+    class GrpcSSE {
+        +ConfigureServices(IServiceCollection services)
+        +Configure(IApplicationBuilder app, IWebHostEnvironment env)
+    }
+    class EventService {
+        +Subscribe(SubscribeRequest request, IServerStreamWriter<EventResponse> responseStream, ServerCallContext context)
+    }
+    class GrpcSSEClient {
+        +Main(string[] args)
+    }
+    GrpcSSE o-- EventService
+    GrpcSSEClient <|-- GrpcSSE
 ```
 
-### Installing
+---
 
-A step-by-step series of examples that tell you how to get a development env running
+## Prerequisites
 
-Say what the step will be
+- [.NET SDK](https://dotnet.microsoft.com/download)
+- gRPC NuGet packages:
+  - `Grpc.AspNetCore`
+  - `Grpc.Tools`
 
-```
-Give the example
-```
+---
 
-Repeat until finished
+## Setup and Run
 
-End with an example of getting some data out of the system or using it for a little demo.
+1. **Clone the repository:**
+
+   ```bash
+   git clone https://github.com/your-username/grpc-poc-dotnet.git
+   cd grpc-poc-dotnet
+   ```
+
+2. **Restore dependencies:**
+
+   ```bash
+   dotnet restore
+   ```
+
+3. **Run the server:**
+
+   ```bash
+   cd GrpcServer
+   dotnet run
+   ```
+
+4. **Run the client:**
+
+   ```bash
+   cd GrpcClient
+   dotnet run
+   ```
+
+---
+
+## Useful Links
+
+- [Server-Sent Events with gRPC in .NET by Gabriele Tronchin](https://medium.com/@gabrieletronchin/c-net-server-sent-events-with-grpc-2fc6f197d955)
+
+---
+
+## License
+
+This project is licensed under the MIT License. See the `LICENSE` file for details.
