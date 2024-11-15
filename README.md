@@ -18,7 +18,7 @@ This repository demonstrates a Proof of Concept (PoC) implementation of gRPC usi
 - **GrpcSSEClient**: Contains the client-side implementation.
 - **proto**: Contains the `messages.proto` file defining the gRPC service contracts.
 
---
+---
 
 ## Architecture
 
@@ -88,14 +88,14 @@ classDiagram
 3. **Run the server:**
 
    ```bash
-   cd GrpcServer
+   cd GrpcSSEServer
    dotnet run
    ```
 
 4. **Run the client:**
 
    ```bash
-   cd GrpcClient
+   cd GrpcSSEClient
    dotnet run
    ```
 
