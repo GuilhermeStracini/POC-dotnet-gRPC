@@ -12,6 +12,14 @@ This repository demonstrates a Proof of Concept (PoC) implementation of gRPC usi
 
 ---
 
+## Project Structure
+
+- **GrpcSSE**: Contains the server-side implementation.
+- **GrpcSSEClient**: Contains the client-side implementation.
+- **proto**: Contains the `messages.proto` file defining the gRPC service contracts.
+
+--
+
 ## Architecture
 
 ### Sequence Diagram: gRPC Server-Sent Events
@@ -55,6 +63,7 @@ classDiagram
 ## Prerequisites
 
 - [.NET SDK](https://dotnet.microsoft.com/download)
+- [gRPC tools](https://grpc.io/docs/languages/csharp/quickstart/)
 - gRPC NuGet packages:
   - `Grpc.AspNetCore`
   - `Grpc.Tools`
