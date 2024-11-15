@@ -1,4 +1,4 @@
-﻿namespace POCTemplate;
+namespace PoCgRpc;
 
 internal static class Program
 {
