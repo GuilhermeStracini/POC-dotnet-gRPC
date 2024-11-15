@@ -1,4 +1,4 @@
 theme: jekyll-theme-cayman
-title: PoC .NET - template
-description: 🔬 Proof of Concept template repository for .NET
+title: PoC gRPC .NET
+description: 🔬 Proof of Concept gPRC .NET
 show_downloads: true
