@@ -28,7 +28,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\Src\POCTemplate\POCTemplate.csproj" />
+    <ProjectReference Include="..\..\Src\PoCgRpc\PoCgRpc.csproj" />
   </ItemGroup>
 
 </Project>
