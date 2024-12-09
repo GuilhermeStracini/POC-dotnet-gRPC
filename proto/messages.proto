@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+option csharp_namespace = "GrpcSSE";
+
+service EventService {
+  rpc Subscribe(SubscribeRequest) returns (stream EventResponse);
+}
+
+message SubscribeRequest {
+  string client_id = 1;
+}
+
+message EventResponse {
+  string event_data = 1;
+}
