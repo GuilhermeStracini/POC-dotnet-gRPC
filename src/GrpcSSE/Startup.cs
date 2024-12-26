@@ -1,8 +1,8 @@
+using GrpcSSE.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using GrpcSSE.Services;
 
 namespace GrpcSSE
 {
@@ -21,7 +21,10 @@ namespace GrpcSSE
             }
 
             app.UseRouting();
-            app.UseEndpoints(endpoints => { endpoints.MapGrpcService<EventService>(); });
+            app.UseEndpoints(endpoints =>
+            {
+                endpoints.MapGrpcService<EventService>();
+            });
         }
     }
 }
