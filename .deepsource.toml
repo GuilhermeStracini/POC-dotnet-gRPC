@@ -1,8 +1,9 @@
 version = 1
 
-[[analyzers]]
-name = "test-coverage"
-enabled = true
+# Uncomment this section when add tests and test report
+# [[analyzers]]
+# name = "test-coverage"
+# enabled = true
 
 [[analyzers]]
 name = "secrets"
