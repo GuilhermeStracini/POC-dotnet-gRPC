@@ -110,3 +110,6 @@ classDiagram
 ## License
 
 This project is licensed under the MIT License. See the `LICENSE` file for details.
+## Pixeebot Activity Dashboard
+![DashList](https://docs.pixee.ai/img/pixee_dashlist.png)
+This dashboard summarizes repository activity and improvement opportunities.
